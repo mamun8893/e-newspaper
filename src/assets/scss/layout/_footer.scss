@@ -1,0 +1,31 @@
+.copyright-text {
+    border-top: 1px solid #e2e2e2;
+    padding: 0.667rem 0rem 1.11rem 0rem
+    ;
+    span{
+        color: $color-black-light;
+        font-size: 13px;
+        padding: 0px 8px;
+        position: relative;
+        &::after{
+            content: "";
+            width: 1px;
+            height: 15px;
+            background-color: #595959;
+            position: absolute;
+            right: 0;
+            top: 45%;
+            transform: translateY(-50%);
+        }
+        &:first-child{
+            padding-left: 0px;
+        }
+
+        &:last-child{
+            padding-right: 0px;
+            &::after{
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+//Font
+
+@font-face {
+    font-family: font-regular;
+    src: url("../../fonts/Shurjo-Regular.ttf");
+}
+
+
+
+@font-face {
+    font-family: font-bold;
+    src: url("../../fonts/Shurjo-Bold.ttf");
+}
+
+$font-regular:font-regular;
+$font-bold: font-bold;
+
+//Color
+
+$color-white:#fff;
+$color-main-balck:#121212;
+$color-black-light:#555555;
+$color-blue:#0573e6;
+
+//Media Query
+
+$max1920: "only screen and (max-width: 1920px)";
+$max1850: "only screen and (max-width: 1850px)";
+$max1800: "only screen and (max-width: 1800px)";
+$max1760: "only screen and (max-width: 1760px)";
+$max1650: "only screen and (max-width: 1650px)";
+$max1399: "only screen and (max-width: 1399.98px)";
+$max1366: "only screen and (max-width: 1366px)";
+$max1280: "only screen and (max-width: 1280px)";
+$max1199: "only screen and (max-width: 1199.98px)";
+$max1024: "only screen and (max-width: 1024px)";
+$max991: "only screen and (max-width: 991.98px)";
+$max767: "only screen and (max-width: 767.98px)";
+$max575: "only screen and (max-width: 575.98px)";
+$max480: "only screen and (max-width: 480px)";
+$max374: "only screen and (max-width: 374.98px)";
+$max320: "only screen and (max-width: 320px)";
