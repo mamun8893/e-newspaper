@@ -50,6 +50,7 @@
     display: -ms-flexbox; 
     display: -webkit-flex; 
     display: flex; 
+    flex-wrap: wrap;
    
 }
 @mixin flex-wrap($value: nowrap) {
