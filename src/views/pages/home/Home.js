@@ -7,11 +7,21 @@ import AdsmallImg from "../../../assets/images/ad-small.png";
 import useFetch from "../../../hook/useFetch";
 
 const Home = () => {
-  const { data } = useFetch("./data.json");
+  const { data, loading } = useFetch("./data.json");
 
-  data.sort((obj1, obj2) => {
-    return obj1.sort - obj2.sort;
-  });
+  if (data.length > 0) {
+    data.sort((obj1, obj2) => {
+      return obj1.sort - obj2.sort;
+    });
+  }
+
+  const mainPost = data.slice(0, 1);
+  const secondPost = data.slice(1, 5);
+  const thirdPost = data.slice(5, 11);
+
+  console.log("Main Post", mainPost);
+  console.log("Second Post", secondPost);
+  console.log("Third Post", thirdPost);
 
   return (
     <div className="main-area">
