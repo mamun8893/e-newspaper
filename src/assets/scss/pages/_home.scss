@@ -44,6 +44,9 @@
                 border: none;
                 display: block;  
            }
+           @media #{$max575}{
+               width: calc(50% - 12px);  
+           }
 
            .text{
                @media #{$max991}{
@@ -82,6 +85,12 @@
     flex: 0 0 auto;
     width: calc(65% - 32px);
     position: relative;
+    @media #{$max767}{
+        width: 100%; 
+    }
+    @media #{$max575}{
+        display: block;  
+    }
 
     &::after{
         content: "";
@@ -93,6 +102,9 @@
         bottom: -16px;
         @media #{$max1280}{
             bottom: -10px;
+        }
+        @media #{$max767}{
+            width: 100%; 
         }
 
     }  
@@ -106,6 +118,10 @@
     .post-content { 
         flex: 0 0 auto;
         width: 52%;
+        @media #{$max575}{
+            width: 100%;
+            margin-bottom: 20px;    
+        }
         h2{
             font-size: 25px;
             color: $color-main-balck;
@@ -117,6 +133,10 @@
                 font-size: 20px;
                 line-height: 30px;
             }
+            @media #{$max767}{
+                font-size: 18px;
+                line-height: 28px;   
+            }  
         }
     }
 }  
@@ -129,7 +149,11 @@
           line-height: 26px;
           @media #{$max1199}{
               font-size: 14px;
-              line-height: 24px;
+              line-height: 22px;
+          }
+          @media #{$max575}{
+              font-size: 13px;
+              line-height: 20px;  
           }
           &:hover{
               color: $color-blue;
@@ -139,6 +163,9 @@
          color: $color-black-light;
          font-size: 14px;
          line-height: 20px;
+         @media #{$max575} {
+             font-size: 13px;  
+         }
      }
 
      .description {
@@ -146,6 +173,7 @@
          @media #{$max1199}{
              margin-top: 10px;
          }
+         
      } 
      .time{
          margin-top: 15px; 
@@ -168,6 +196,12 @@
          width:calc(33.3% - 20px);
      }
       
+     @media #{$max767}{
+         width:calc(50% - 20px);
+         &::after{
+             display: none;
+         }
+     } 
 
      &::after{
          content: "";
@@ -222,9 +256,15 @@
         width: calc(33.33% - 20px); 
      }
      @media #{$max991}{
-         display: block;
-          
+         display: block;     
      } 
+     @media #{$max575}{
+         width: calc(50% - 20px); 
+
+         &::after,&::before{
+             display: none;    
+         }
+     }
       &::after {
           content: "";
           position: absolute;
@@ -315,6 +355,9 @@
          width: 57%;
          h2{
              font-size: 16px;
+             @media #{$max767}{
+                 font-size: 14px; 
+             }
          }
      }
 
