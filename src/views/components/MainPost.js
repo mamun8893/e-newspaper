@@ -4,13 +4,13 @@ import Images from "./common/Images";
 import Time from "./common/Time";
 import Title from "./common/Title";
 
-const MainPost = () => {
+const MainPost = ({ mainPostData }) => {
   return (
     <div className="mian-post-item-warp">
       <div className="post-content">
-        <Title />
-        <Description />
-        <Time />
+        <Title title={mainPostData?.title} />
+        <Description description={mainPostData?.description} />
+        <Time time={mainPostData?.time} />
       </div>
       <Images />
     </div>

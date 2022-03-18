@@ -9,19 +9,19 @@ import useFetch from "../../../hook/useFetch";
 const Home = () => {
   const { data, loading } = useFetch("./data.json");
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   if (data.length > 0) {
     data.sort((obj1, obj2) => {
       return obj1.sort - obj2.sort;
     });
   }
 
-  const mainPost = data.slice(0, 1);
+  const mainPostData = data.slice(0, 1);
   const secondPost = data.slice(1, 5);
   const thirdPost = data.slice(5, 11);
-
-  console.log("Main Post", mainPost);
-  console.log("Second Post", secondPost);
-  console.log("Third Post", thirdPost);
 
   return (
     <div className="main-area">
@@ -30,8 +30,10 @@ const Home = () => {
         <div className="main-warper">
           <div className="all-post-left">
             <div className="main-post-warper post-row1">
-              <MainPost />
-              <SecondPost />
+              <MainPost mainPostData={mainPostData[0]} />
+              {secondPost.map((postData) => (
+                <SecondPost key={postData.id} postData={postData} />
+              ))}
             </div>
             <div className="post-row2">
               <ThirdPost />

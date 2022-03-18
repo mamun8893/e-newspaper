@@ -1,10 +1,10 @@
 import React from "react";
 
-const Title = () => {
+const Title = ({ title }) => {
   return (
     <div className="heading">
       <h2>
-        <a href="#link"> সরকার নির্ধারিত দরে ভোজ্যতেল বেচাকেনার আহ্বান</a>
+        <a href="#link"> {title}</a>
       </h2>
     </div>
   );
