@@ -19,14 +19,50 @@
 
         @media #{$max991}{
             width: 100%;
+            border-right: none;
+            padding-right: 0px;
         }   
        
     }
     .add-post-right{
         padding-left: 16px;
+        @media #{$max991}{
+            padding-left: 0px;
+            @include d-flex;
+            grid-gap: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #e2e2e2;  
+            margin-top: 10px; 
+        }
+
+        .item{
+           @media #{$max991}{
+                width: calc(25% - 12px);
+                flex: 0 0 auto;
+                padding-top: 0px;
+                margin-top: 0px;
+                border: none;
+                display: block;  
+           }
+
+           .text{
+               @media #{$max991}{
+                   width: 100%;
+                   margin-bottom: 10px;   
+               }
+           }
+
+           &.main-paper {
+               @media #{$max991}{
+                   padding-top: 20px;
+               }    
+           }
+        }   
+
+        
     }
-} 
- 
+}                    
+   
 .main-post-warper{
     @include d-flex;
     grid-gap: 32px;
@@ -128,7 +164,10 @@
      flex: 0 0 auto;
      width:calc(33.3% - 32px);
      position: relative;
-     
+     @media #{$max991}{
+         width:calc(33.3% - 20px);
+     }
+      
 
      &::after{
          content: "";
@@ -179,6 +218,13 @@
      flex: 0 0 auto;
      width: calc(33.33% - 32px);
      position: relative;
+     @media #{$max1280}{
+        width: calc(33.33% - 20px); 
+     }
+     @media #{$max991}{
+         display: block;
+          
+     } 
       &::after {
           content: "";
           position: absolute;
@@ -218,8 +264,11 @@
      .post-image{
          flex: 0 0 auto;
          width: 40%;
+         @media #{$max991}{
+             width: 100%;
+         }
      }
- }        
+ }         
 .add-post-right {
     .third-post-item{
         width: 100%;
@@ -237,7 +286,10 @@
      @media #{$max1280}{
          width: calc(27% - 20px);
      }
- }  
+     @media #{$max991}{
+         width: 100%;
+     }
+ }    
  .ad-widget-area{
      padding: 16px 0px;
      margin-top: 16px;

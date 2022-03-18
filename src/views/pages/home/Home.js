@@ -47,13 +47,13 @@ const Home = () => {
             </div>
           </div>
           <div className="add-post-right">
-            <div className="small-ad-widget">
+            <div className="small-ad-widget item">
               <a href="#link">
                 <img src={AdsmallImg} className="img-fluid" alt="ad" />
               </a>
             </div>
 
-            <div className="podt-item">
+            <div className="podt-item item">
               <Images
                 images={rightPost[0]?.photo}
                 title={rightPost[0]?.title}
@@ -63,7 +63,7 @@ const Home = () => {
                 <Time time={rightPost[0]?.time} />
               </div>
             </div>
-            <div className="third-post-item">
+            <div className="third-post-item item">
               <Images
                 images={rightPost[1]?.photo}
                 title={rightPost[1]?.title}
@@ -74,7 +74,7 @@ const Home = () => {
                 <Time time={rightPost[1]?.time} />
               </div>
             </div>
-            <div className="main-paper">
+            <div className="main-paper item">
               <div className="text">
                 <a href="#link">
                   <h2>ছাপা কাগজের মতো পড়ুন আজকের পত্রিকা</h2>
