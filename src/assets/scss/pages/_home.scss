@@ -177,7 +177,17 @@
          width: 40%;
      }
  }        
+.right-post{
+    .third-post-item{
+        width: 100%;
+        border: none;
+        padding-top: 16px;
 
+        &::before,&::after{
+            display: none;
+        }
+    }
+} 
  .add-post-right{
      flex: 0 0 auto;
      width: calc(27% - 32px);

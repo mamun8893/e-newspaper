@@ -5,6 +5,9 @@ import ThirdPost from "../../components/ThirdPost";
 import Adimage from "../../../assets/images/ad.jpg";
 import AdsmallImg from "../../../assets/images/ad-small.png";
 import useFetch from "../../../hook/useFetch";
+import Images from "../../components/common/Images";
+import Title from "../../components/common/Title";
+import Time from "../../components/common/Time";
 
 const Home = () => {
   const { data, loading } = useFetch("./data.json");
@@ -22,11 +25,15 @@ const Home = () => {
   const mainPostData = data.slice(0, 1);
   const secondPost = data.slice(1, 5);
   const thirdPost = data.slice(5, 11);
+  const rightPost = data.slice(11, 13);
+
+  console.log(rightPost[0]);
 
   return (
     <div className="main-area">
       {/* Main  Area Start*/}
       <div className="m-container">
+        {/* Post Area Start */}
         <div className="main-warper">
           <div className="all-post-left">
             <div className="main-post-warper post-row1">
@@ -36,12 +43,9 @@ const Home = () => {
               ))}
             </div>
             <div className="post-row2">
-              <ThirdPost />
-            </div>
-            <div className="ad-widget-area">
-              <a href="#link">
-                <img src={Adimage} className="img-fluid" alt="ad" />
-              </a>
+              {thirdPost.map((postData) => (
+                <ThirdPost key={postData.id} postData={postData} />
+              ))}
             </div>
           </div>
           <div className="add-post-right">
@@ -51,19 +55,25 @@ const Home = () => {
               </a>
             </div>
             <div className="right-post">
-              <div className="post-image mb-10">
-                <a href="#link">
-                  <img
-                    src="https://images.prothomalo.com/prothomalo-bangla%2F2022-03%2F2d336b63-09cc-485b-aef4-7db6c8917756%2FSequence_02_00_25_06_06_Still009.jpg?rect=0%2C0%2C1620%2C1080&auto=format%2Ccompress&fmt=webp&format=webp&w=300&dpr=1.0"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </a>
+              <div className="podt-item">
+                <Images
+                  images={rightPost[0]?.photo}
+                  title={rightPost[0]?.title}
+                />
+                <div className="post-content">
+                  <Title title={rightPost[0]?.title} />
+                  <Time time={rightPost[0]?.time} />
+                </div>
               </div>
-              <div className="post-content">
-                <h2>প্রথম ওয়ানডের আগে অনুশীলনে বাংলাদেশ</h2>
-                <div className="time">
-                  <p>২ ঘণ্টা আগে</p>
+              <div className="third-post-item">
+                <Images
+                  images={rightPost[1]?.photo}
+                  title={rightPost[1]?.title}
+                />
+
+                <div className="post-content">
+                  <Title title={rightPost[1]?.title} />
+                  <Time time={rightPost[1]?.time} />
                 </div>
               </div>
               <div className="main-paper">
@@ -83,6 +93,15 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* Post Area End */}
+
+        {/* Ad Widget Area  Start*/}
+        <div className="ad-widget-area text-center">
+          <a href="#link">
+            <img src={Adimage} className="img-fluid" alt="ad" />
+          </a>
+        </div>
+        {/* Ad Widget Area  End*/}
       </div>
       {/* Main  Area End*/}
     </div>

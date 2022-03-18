@@ -12,7 +12,7 @@ const MainPost = ({ mainPostData }) => {
         <Description description={mainPostData?.description} />
         <Time time={mainPostData?.time} />
       </div>
-      <Images />
+      <Images images={mainPostData?.photo} title={mainPostData?.title} />
     </div>
   );
 };
