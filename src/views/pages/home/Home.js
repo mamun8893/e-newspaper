@@ -4,8 +4,15 @@ import SecondPost from "../../components/SecondPost";
 import ThirdPost from "../../components/ThirdPost";
 import Adimage from "../../../assets/images/ad.jpg";
 import AdsmallImg from "../../../assets/images/ad-small.png";
+import useFetch from "../../../hook/useFetch";
 
 const Home = () => {
+  const { data } = useFetch("./data.json");
+
+  data.sort((obj1, obj2) => {
+    return obj1.sort - obj2.sort;
+  });
+
   return (
     <div className="main-area">
       {/* Main  Area Start*/}
