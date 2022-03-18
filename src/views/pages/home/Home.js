@@ -13,7 +13,7 @@ const Home = () => {
   const { data, loading } = useFetch("./data.json");
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loader">Loading...</div>;
   }
 
   if (data.length > 0) {
@@ -26,8 +26,6 @@ const Home = () => {
   const secondPost = data.slice(1, 5);
   const thirdPost = data.slice(5, 11);
   const rightPost = data.slice(11, 13);
-
-  console.log(rightPost[0]);
 
   return (
     <div className="main-area">
@@ -54,42 +52,41 @@ const Home = () => {
                 <img src={AdsmallImg} className="img-fluid" alt="ad" />
               </a>
             </div>
-            <div className="right-post">
-              <div className="podt-item">
-                <Images
-                  images={rightPost[0]?.photo}
-                  title={rightPost[0]?.title}
-                />
-                <div className="post-content">
-                  <Title title={rightPost[0]?.title} />
-                  <Time time={rightPost[0]?.time} />
-                </div>
-              </div>
-              <div className="third-post-item">
-                <Images
-                  images={rightPost[1]?.photo}
-                  title={rightPost[1]?.title}
-                />
 
-                <div className="post-content">
-                  <Title title={rightPost[1]?.title} />
-                  <Time time={rightPost[1]?.time} />
-                </div>
+            <div className="podt-item">
+              <Images
+                images={rightPost[0]?.photo}
+                title={rightPost[0]?.title}
+              />
+              <div className="post-content">
+                <Title title={rightPost[0]?.title} />
+                <Time time={rightPost[0]?.time} />
               </div>
-              <div className="main-paper">
-                <div className="text">
-                  <a href="#link">
-                    <h2>ছাপা কাগজের মতো পড়ুন আজকের পত্রিকা</h2>
-                  </a>
-                </div>
-                <a href="#link" className="paper-image">
-                  <img
-                    src="https://images.prothomalo.com/prothomalo-bangla/2021-12/8f22f0c6-f808-40df-9676-52771474d05e/epaper_img.jpg?format=webp&w=160&dpr=1.0"
-                    className="img-fluid"
-                    alt="paper"
-                  />
+            </div>
+            <div className="third-post-item">
+              <Images
+                images={rightPost[1]?.photo}
+                title={rightPost[1]?.title}
+              />
+
+              <div className="post-content">
+                <Title title={rightPost[1]?.title} />
+                <Time time={rightPost[1]?.time} />
+              </div>
+            </div>
+            <div className="main-paper">
+              <div className="text">
+                <a href="#link">
+                  <h2>ছাপা কাগজের মতো পড়ুন আজকের পত্রিকা</h2>
                 </a>
               </div>
+              <a href="#link" className="paper-image">
+                <img
+                  src="https://images.prothomalo.com/prothomalo-bangla/2021-12/8f22f0c6-f808-40df-9676-52771474d05e/epaper_img.jpg?format=webp&w=160&dpr=1.0"
+                  className="img-fluid"
+                  alt="paper"
+                />
+              </a>
             </div>
           </div>
         </div>
